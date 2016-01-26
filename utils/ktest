@@ -20,12 +20,13 @@
 #
 
 import usb
-import sys, thread, time
+import sys, thread, time, glob, os
 from datetime import datetime
 from struct import *
 
 workid = addr = 0
 last = datetime.now()
+idinfo = []
 
 
 Work =   ["4375c3b7a27cc936f295a6140358e965319322e7cfd11e137df42ea60864a675", "218d522051d547d51a00c94e", "b2cc9f74", "accept"]
@@ -54,7 +55,7 @@ def sendcmd(cmd, data=""):
 		pass
 
 def chkreply():
-	global dev, last
+	global dev, last, idinfo
 	while True:
 		try:
 			data = dev.read(0x81, 15, 0, 500)
@@ -75,7 +76,10 @@ def chkreply():
 					elif cmd == 'C':
 						print "\nClock:%d, Target Temp:%u, Critical Temp:%u, Target Fan: %u, Pad:%u" % unpack("=HBBBB", data[2:8])
 					elif cmd == 'I':
-						print "\nVersion:%02x, ProductID:%s, Serial#:%08x" % unpack("=B7sL", data[2:14])
+						idinfo = unpack("=B7sL", data[2:14])
+						print "\nVersion:%02x, ProductID:%s, Serial#:%08x" % idinfo
+						if "%02x" % idinfo[2] = "deadbeef" and os.path.isfile("%s-serials.txt" % idinfo[1]):
+							serialupdate()
 					elif cmd == '=':
 						now = datetime.now()
 						diff = now - last
@@ -85,12 +89,100 @@ def chkreply():
 						n, = unpack(">L", pack("<L", v - 0xC0))
 						chk = "GOOD" if ("%x" % n) == Work[2] else "BAD"
 						print ", Nonce:%08x %s" % (n, chk)
+					elif cmd == 'F':
+						print "\nFW Row %02x:%c" % unpack("=Bc", data[2:4])
 					else:
 						print "\n"+' '.join(x.encode('hex') for x in data)
 				except Exception, e:
 					print "\n<framing error>", e
 			print "Cmds [WAISCE.Q]: "
 
+def readINHX8M(hexfile):
+	result = list(chr(0)*16384)
+	lines = [line.strip() for line in open(hexfile)]
+	for line in lines:
+		if line[0] == ':':
+			data = line[1:].decode('hex')
+			sz,addr,rt = unpack(">BHB", data[:4])
+			if rt != 0:
+				continue
+			if sum(ord(c) for c in data) % 256 == 0:
+				result[addr:addr+sz] = data[4:-1]
+			else:
+				print "Hex file chksum error:", hexfile, line
+				return ""
+	return "".join(result)
+	
+def fwupdate():
+	global idinfo
+	
+	fworg = ""
+	fwupg = []
+	v = "%02x" % idinfo[0]
+	fwlist = glob.glob("%s-??.hex" % idinfo[1])
+	for f in fwlist:
+		if f[4] == v[0] and f[5] == v[1]:
+			print "Current hex file found:", f
+			fworg = f
+		if f[4] > v[0] or f[5] > v[1]:
+			fwupg.append(f)
+	if fworg == "":
+		print "No hex file found for version %d.\nEnter filename to upgrade from:" % v
+		fworg = raw_input("")
+		if fworg == "":
+			return
+	if len(fwupg) == 0:
+		print "No upgrade hex file found for version %d.\nEnter filename to upgrade to:" % v
+		fwupg[0] = raw_input("")
+		if fwupg[0] == "":
+			return
+	fwupg.sort()
+	print "Update from %s to %s? [yn]" % (fworg, fwupg[-1])
+	if raw_input("").upper() != 'Y':
+		return
+	
+	# load current and new hex files as byte strings
+	hexorg = readINHX8M(fworg)
+	hexupg = readINHX8M(fwupg[-1])
+	if hexorg == "" or hexupg == "":
+		return
+	serialtxt = "%08x" % idinfo[2]
+	fwprog(hexorg, hexupg.replace("34EF34BE34AD34DE", "34"+serialtxt[6:8]+"34"+serialtxt[4:6]+"34"+serialtxt[2:4]+"34"+serialtxt[0:2]))
+	
+def serialupdate():
+	global idinfo
+	
+	hexfile = "%s-%02x.hex" % (idinfo[1], idinfo[0])
+	serfile = "%s-serials.txt" % idinfo[1]
+	if os.path.isfile(hexfile):
+		hexorg = readINHX8M(hexfile)
+		serials = [line.strip() for line in open(serfile)]
+		if len(serials) > 0:
+			idinfo[2] = int(serials[-1])+1
+			with open(serfile, "a") as f:
+				f.write("\n"+idinfo[2])
+			serialtxt = "%08x" % idinfo[2]
+			fwprog(hexorg, hexorg.replace("34EF34BE34AD34DE", "34"+serialtxt[6:8]+"34"+serialtxt[4:6]+"34"+serialtxt[2:4]+"34"+serialtxt[0:2]))
+		
+def fwprog():	
+	# enter firmware update mode
+	print "entering firmware update mode"
+	#sendcmd('F', "KlondikeRocks")
+	
+	# send differential update stream
+	# since the PIC must be programmed in "rows" of 32 words (64 bytes) we scan for any rows with changes and send them
+	# even though the firmware allows for sending more than 1 row we keep it simple and send only single rows
+	for row in range(len(hexupg)/64 + 1):
+		data = hexupg[row*64:row*64+64]
+		if data != hexorg[row*64:row*64+64]:
+			print "sending row %d data" % row
+			print data.encode('hex')
+			#sendcmd('D', data[:32])  # first half row
+			#sendcmd('D', data[32:])  # second half row
+			#sendcmd('W', chr(row) + chr(1) )  # write the row ( an F reply occurs for each write to verify )
+	print "sending reset"
+	#sendcmd('R')  # reset
+	
 			
 if __name__ == '__main__':
 	
@@ -133,6 +225,10 @@ if __name__ == '__main__':
 				workid = (workid+1) % 256
 				data = chr(workid) + Work[0].decode('hex') + Work[1].decode('hex')
 				last = datetime.now()
+			elif cmd == 'F':
+				print "Checking for firmware update"
+				fwupdate()
+				continue
 	
 			sendcmd(cmd, data)
 

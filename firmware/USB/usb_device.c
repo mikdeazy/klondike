@@ -375,7 +375,7 @@ extern ROM BYTE *ROM USB_SD_Ptr[];
 /** Function Prototypes ********************************************/
 //External
 //This is the prototype for the required user event handler
-BOOL USER_USB_CALLBACK_EVENT_HANDLER(int event, void *pdata, WORD size);
+__section("usb") BOOL USER_USB_CALLBACK_EVENT_HANDLER(int event, void *pdata, WORD size);
 
 //Internal Functions
 static void USBCtrlEPService(void);
@@ -664,7 +664,7 @@ void USBDeviceInit(void)
     void __attribute__((interrupt(),vector(_USB_1_VECTOR))) _USB1Interrupt( void ) 
   #endif
 #else
-void USBDeviceTasks(void)
+void __section("usb") USBDeviceTasks(void)
 #endif
 {
     BYTE i;
@@ -1169,7 +1169,7 @@ void USBEnableEndpoint(BYTE ep, BYTE options)
     function first.  
     
   *************************************************************************/
-USB_HANDLE USBTransferOnePacket(BYTE ep,BYTE dir,BYTE* data,BYTE len)
+__section("usb") USB_HANDLE  USBTransferOnePacket(BYTE ep,BYTE dir,BYTE* data,BYTE len)
 {
     volatile BDT_ENTRY* handle;
 
@@ -1586,7 +1586,7 @@ void USBDeviceAttach(void)
   Remarks:
     None                                                                                                          
   *****************************************************************************/
-void USBCtrlEPAllowStatusStage(void)
+void __section("usb") USBCtrlEPAllowStatusStage(void)
 {
     //Check and set two flags, prior to actually modifying any BDT entries.
     //This double checking is necessary to make certain that 
@@ -2352,7 +2352,7 @@ static void USBStdGetStatusHandler(void)
  *
  * Note:            None
  *******************************************************************/
-static void USBStallHandler(void)
+static void __section("usb") USBStallHandler(void)
 {
     /*
      * Does not really have to do anything here,
@@ -2395,7 +2395,7 @@ static void USBStallHandler(void)
  *
  * Note:            None
  *******************************************************************/
-static void USBSuspend(void)
+static void __section("usb") USBSuspend(void)
 {
     /*
      * NOTE: Do not clear UIRbits.ACTVIF here!
@@ -2452,7 +2452,7 @@ static void USBSuspend(void)
  *
  * Note:            None
  *******************************************************************/
-static void USBWakeFromSuspend(void)
+static void __section("usb") USBWakeFromSuspend(void)
 {
     USBBusIsSuspended = FALSE;
 
@@ -2519,7 +2519,7 @@ static void USBWakeFromSuspend(void)
  *
  * Note:            None
  *******************************************************************/
-static void USBCtrlEPService(void)
+static void __section("usb") USBCtrlEPService(void)
 {
     //If we get to here, that means a successful transaction has just occurred 
     //on EP0.  This means "progress" has occurred in the currently pending 

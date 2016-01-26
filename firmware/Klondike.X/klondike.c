@@ -22,8 +22,8 @@
 #include <xc.h>
 #include "klondike.h"
 
-const IDENTITY ID = { 0x10, "K16", 0xDEADBEEF };
-//const char FwPwd[] = FWPWD;
+const IDENTITY ID = { 0x02, "K16", 0xCAFEBABE };
+const char FwPwd[] = FWPWD;
 
 DWORD BankRanges[8] = { 0, 0x40000000, 0x2aaaaaaa, 0x20000000, 0x19999999, 0x15555555, 0x12492492, 0x10000000 };
 BYTE WorkNow, BankSize, ResultQC, SlowTick;
@@ -90,12 +90,12 @@ void ProcessCmd(char *cmd)
             Status.State = (cmd[2] == '1') ? 'R' : 'D';
             SendCmdReply(cmd, (char *)&Status, sizeof(Status));
             break;
-        //case 'F': // enter firmware update mode
-        //    for(BYTE n = 0; n < sizeof(FwPwd); n++)
-	//	if(FwPwd[n] != cmd[2+n])
-        //            return;
-        //    UpdateFirmware();
-        //    break;
+        case 'F': // enter firmware update mode
+            for(BYTE n = 0; n < sizeof(FwPwd); n++)
+				if(FwPwd[n] != cmd[2+n])
+					return;
+            UpdateFirmware();
+            break;
         default:
             break;
         }
@@ -156,7 +156,7 @@ void DetectAsics(void)
     //SendAsicData(&WorkQue[0], (StartNonce & 0x80000000) ? DATA_ONE : DATA_ZERO);
     // wait for "push work time" for results to return and be counted*/
     
-    Status.ChipCount = 16; // just for testing
+    Status.ChipCount = CHIPS; // just for testing
     
     // pre-calc nonce range values
     BankSize = (Status.ChipCount+1)/2;

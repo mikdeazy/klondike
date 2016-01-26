@@ -285,7 +285,7 @@ EVENT_TRANSFER_TERMINATED 5
 "249
 [v F3745 `*DCCuc  1 t 2 ]
 [s S1300 _worktask 45 `uc 1 WorkID 1 0 `[8]ul 1 MidState 32 1 `[3]ul 1 Merkle 12 33 ]
-"357 asic.c
+"358 asic.c
 [s S1340 _i2c 1 `uc 1 Next 1 0 :5:0 
 `uc 1 Slave 1 0 :1:5 
 `uc 1 Master 1 0 :1:6 
@@ -362,7 +362,7 @@ EVENT_TRANSFER_TERMINATED 5
 ]
 [u S1604 . 1 `S1600 1 . 1 0 ]
 "6501
-[s S1614 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1618 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -371,24 +371,24 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 LATC6 1 0 :1:6 
 `uc 1 LATC7 1 0 :1:7 
 ]
-[u S1623 . 1 `S1614 1 . 1 0 ]
+[u S1627 . 1 `S1618 1 . 1 0 ]
 "6343
-[s S1636 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S1640 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[s S1643 . 1 `uc 1 . 1 0 :4:0 
+[s S1647 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 `uc 1 TMR1CS0 1 0 :1:6 
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
-[u S1649 . 1 `S1636 1 . 1 0 `S1643 1 . 1 0 ]
+[u S1653 . 1 `S1640 1 . 1 0 `S1647 1 . 1 0 ]
 "6715
-[s S1667 . 1 `uc 1 T1GSS 1 0 :2:0 
+[s S1671 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
 `uc 1 T1GSPM 1 0 :1:4 
@@ -396,12 +396,12 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 T1GPOL 1 0 :1:6 
 `uc 1 TMR1GE 1 0 :1:7 
 ]
-[s S1675 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[s S1679 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 ]
-[u S1678 . 1 `S1667 1 . 1 0 `S1675 1 . 1 0 ]
+[u S1682 . 1 `S1671 1 . 1 0 `S1679 1 . 1 0 ]
 "6707
-[s S1700 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1704 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -410,13 +410,13 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 RX9 1 0 :1:6 
 `uc 1 SPEN 1 0 :1:7 
 ]
-[u S1709 . 1 `S1700 1 . 1 0 ]
+[u S1713 . 1 `S1704 1 . 1 0 ]
 "1611
-[s S1722 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1726 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
-[s S1726 . 1 `uc 1 . 1 0 :1:0 
+[s S1730 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -424,12 +424,12 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S1734 . 1 `uc 1 . 1 0 :1:0 
+[s S1738 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S1737 . 1 `S1722 1 . 1 0 `S1726 1 . 1 0 `S1734 1 . 1 0 ]
+[u S1741 . 1 `S1726 1 . 1 0 `S1730 1 . 1 0 `S1738 1 . 1 0 ]
 "6723
-[s S1762 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1766 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -438,13 +438,13 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 TRISC6 1 0 :1:6 
 `uc 1 TRISC7 1 0 :1:7 
 ]
-[u S1771 . 1 `S1762 1 . 1 0 ]
+[u S1775 . 1 `S1766 1 . 1 0 ]
 "6729
-[s S1787 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S1791 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
-[s S1791 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S1795 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -452,55 +452,55 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S1799 . 1 `S1787 1 . 1 0 `S1791 1 . 1 0 ]
+[u S1803 . 1 `S1791 1 . 1 0 `S1795 1 . 1 0 ]
 "6731
-[s S1816 . 1 `uc 1 ADPREF 1 0 :2:0 
+[s S1820 . 1 `uc 1 ADPREF 1 0 :2:0 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS 1 0 :3:4 
 `uc 1 ADFM 1 0 :1:7 
 ]
-[s S1821 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[s S1825 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS0 1 0 :1:4 
 `uc 1 ADCS1 1 0 :1:5 
 `uc 1 ADCS2 1 0 :1:6 
 ]
-[u S1828 . 1 `S1816 1 . 1 0 `S1821 1 . 1 0 ]
+[u S1832 . 1 `S1820 1 . 1 0 `S1825 1 . 1 0 ]
 "1730
-[s S1844 . 1 `uc 1 . 1 0 :4:0 
+[s S1848 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRIGSEL 1 0 :3:4 
 ]
-[s S1847 . 1 `uc 1 . 1 0 :4:0 
+[s S1851 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRIGSEL0 1 0 :1:4 
 `uc 1 TRIGSEL1 1 0 :1:5 
 `uc 1 TRIGSEL2 1 0 :1:6 
 ]
-[u S1852 . 1 `S1844 1 . 1 0 `S1847 1 . 1 0 ]
+[u S1856 . 1 `S1848 1 . 1 0 `S1851 1 . 1 0 ]
 "6703
-[s S1865 . 1 `uc 1 PS 1 0 :3:0 
+[s S1869 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
 `uc 1 INTEDG 1 0 :1:6 
 `uc 1 nWPUEN 1 0 :1:7 
 ]
-[s S1872 . 1 `uc 1 PS0 1 0 :1:0 
+[s S1876 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S1879 . 1 `S1865 1 . 1 0 `S1872 1 . 1 0 ]
+[u S1883 . 1 `S1869 1 . 1 0 `S1876 1 . 1 0 ]
 "1879
-[s S1898 . 1 `uc 1 . 1 0 :4:0 
+[s S1902 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRISA4 1 0 :1:4 
 `uc 1 TRISA5 1 0 :1:5 
 ]
-[u S1902 . 1 `S1898 1 . 1 0 ]
+[u S1906 . 1 `S1902 1 . 1 0 ]
 "982
-[s S1909 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1913 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -509,9 +509,9 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 TX9 1 0 :1:6 
 `uc 1 CSRC 1 0 :1:7 
 ]
-[u S1918 . 1 `S1909 1 . 1 0 ]
+[u S1922 . 1 `S1913 1 . 1 0 ]
 "2892
-[s S1930 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S1934 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -520,29 +520,29 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 RCIDL 1 0 :1:6 
 `uc 1 ABDOVF 1 0 :1:7 
 ]
-[u S1939 . 1 `S1930 1 . 1 0 ]
+[u S1943 . 1 `S1934 1 . 1 0 ]
 "2953
-[s S1951 . 1 `uc 1 . 1 0 :4:0 
+[s S1955 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 ANSB4 1 0 :1:4 
 `uc 1 ANSB5 1 0 :1:5 
 ]
-[s S1955 . 1 `uc 1 . 1 0 :4:0 
+[s S1959 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 ANSB 1 0 :4:4 
 ]
-[u S1958 . 1 `S1951 1 . 1 0 `S1955 1 . 1 0 ]
+[u S1962 . 1 `S1955 1 . 1 0 `S1959 1 . 1 0 ]
 "2499
-[s S1969 . 1 `uc 1 . 1 0 :4:0 
+[s S1973 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IOCBP4 1 0 :1:4 
 `uc 1 IOCBP5 1 0 :1:5 
 `uc 1 IOCBP6 1 0 :1:6 
 `uc 1 IOCBP7 1 0 :1:7 
 ]
-[s S1975 . 1 `uc 1 . 1 0 :4:0 
+[s S1979 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IOCBP 1 0 :4:4 
 ]
-[u S1978 . 1 `S1969 1 . 1 0 `S1975 1 . 1 0 ]
+[u S1982 . 1 `S1973 1 . 1 0 `S1979 1 . 1 0 ]
 "3964
-[s S1991 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S1995 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -551,27 +551,27 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S2000 . 1 `uc 1 . 1 0 :2:0 
+[s S2004 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S2005 . 1 `S1991 1 . 1 0 `S2000 1 . 1 0 ]
-"114 klondike.h
-[s S2162 _workstatus 13 `uc 1 State 1 0 `uc 1 ChipCount 1 1 `uc 1 SlaveCount 1 2 `uc 1 WorkQC 1 3 `uc 1 WorkID 1 4 `uc 1 Temp 1 5 `uc 1 FanSpeed 1 6 `uc 1 ErrorCount 1 7 `us 1 HashCount 2 8 `us 1 MaxCount 2 10 `uc 1 Noise 1 12 ]
+[u S2009 . 1 `S1995 1 . 1 0 `S2004 1 . 1 0 ]
+"118 klondike.h
+[s S2168 _workstatus 13 `uc 1 State 1 0 `uc 1 ChipCount 1 1 `uc 1 SlaveCount 1 2 `uc 1 WorkQC 1 3 `uc 1 WorkID 1 4 `uc 1 Temp 1 5 `uc 1 FanSpeed 1 6 `uc 1 ErrorCount 1 7 `us 1 HashCount 2 8 `us 1 MaxCount 2 10 `uc 1 Noise 1 12 ]
 "252 ../Include/USB/usb_device.h
-[s S2191 . 1 `uc 1 . 1 0 :4:0 
+[s S2197 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRISA4 1 0 :1:4 
 `uc 1 TRISA5 1 0 :1:5 
 ]
-[u S2195 . 1 `S1898 1 . 1 0 ]
+[u S2201 . 1 `S1902 1 . 1 0 ]
 "982 /opt/microchip/xc8/v1.12/include/pic16lf1459.h
-[s S2198 . 1 `uc 1 . 1 0 :4:0 
+[s S2204 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LATA4 1 0 :1:4 
 `uc 1 LATA5 1 0 :1:5 
 ]
-[u S2202 . 1 `S1600 1 . 1 0 ]
-"111 klondike.h
+[u S2208 . 1 `S1600 1 . 1 0 ]
+"115 klondike.h
 [e E3476 . `uc
 DETACHED_STATE 0
 ATTACHED_STATE 1
@@ -582,7 +582,7 @@ ADDRESS_STATE 16
 CONFIGURED_STATE 32
 ]
 "1983 ../Include/USB/usb_device.h
-[s S2219 . 1 `uc 1 . 1 0 :1:0 
+[s S2225 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 SUSPND 1 0 :1:1 
 `uc 1 RESUME 1 0 :1:2 
 `uc 1 USBEN 1 0 :1:3 
@@ -590,9 +590,9 @@ CONFIGURED_STATE 32
 `uc 1 SE0 1 0 :1:5 
 `uc 1 PPBRST 1 0 :1:6 
 ]
-[u S2227 . 1 `S278 1 . 1 0 ]
+[u S2233 . 1 `S278 1 . 1 0 ]
 "4869 /opt/microchip/xc8/v1.12/include/pic16lf1459.h
-[s S2230 . 1 `uc 1 BC8 1 0 :1:0 
+[s S2236 . 1 `uc 1 BC8 1 0 :1:0 
 `uc 1 BC9 1 0 :1:1 
 `uc 1 BSTALL 1 0 :1:2 
 `uc 1 DTSEN 1 0 :1:3 
@@ -601,23 +601,23 @@ CONFIGURED_STATE 32
 `uc 1 DTS 1 0 :1:6 
 `uc 1 UOWN 1 0 :1:7 
 ]
-[s S2239 . 1 `uc 1 . 1 0 :2:0 
+[s S2245 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID0 1 0 :1:2 
 `uc 1 PID1 1 0 :1:3 
 `uc 1 PID2 1 0 :1:4 
 `uc 1 PID3 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 ]
-[s S2246 . 1 `uc 1 . 1 0 :2:0 
+[s S2252 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-[u S2250 _BD_STAT 1 `uc 1 Val 1 0 `S27 1 . 1 0 `S36 1 . 1 0 `S43 1 . 1 0 ]
-[s S2255 . 4 `S47 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
-[s S2260 . 4 `uc 1 filler1 1 0 :8:0 
+[u S2256 _BD_STAT 1 `uc 1 Val 1 0 `S27 1 . 1 0 `S36 1 . 1 0 `S43 1 . 1 0 ]
+[s S2261 . 4 `S47 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S2266 . 4 `uc 1 filler1 1 0 :8:0 
 `uc 1 filler2 1 1 :8:0 
 `us 1 ADR 2 2 ]
-[u S2264 __BDT 4 `S52 1 . 4 0 `S57 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[u S2270 __BDT 4 `S52 1 . 4 0 `S57 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
 "409 ../Include/USB/usb_device.h
 [e E5 _BOOL `uc
 FALSE 0
@@ -668,7 +668,41 @@ EVENT_ATTACH 4
 EVENT_TRANSFER_TERMINATED 5
 ]
 "70 main.c
-[v F3828 `(v  1 t 0 ]
+[v F3830 `(v  1 t 0 ]
+"671
+[s S2424 _worktask 45 `uc 1 WorkID 1 0 `[8]ul 1 MidState 32 1 `[3]ul 1 Merkle 12 33 ]
+"30 fwup.c
+[e E5 _BOOL `uc
+FALSE 0
+TRUE 1
+]
+"35
+[s S2434 . 1 `uc 1 BC8 1 0 :1:0 
+`uc 1 BC9 1 0 :1:1 
+`uc 1 BSTALL 1 0 :1:2 
+`uc 1 DTSEN 1 0 :1:3 
+`uc 1 INCDIS 1 0 :1:4 
+`uc 1 KEN 1 0 :1:5 
+`uc 1 DTS 1 0 :1:6 
+`uc 1 UOWN 1 0 :1:7 
+]
+[s S2443 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID0 1 0 :1:2 
+`uc 1 PID1 1 0 :1:3 
+`uc 1 PID2 1 0 :1:4 
+`uc 1 PID3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+]
+[s S2450 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID 1 0 :4:2 
+`uc 1 . 1 0 :2:6 
+]
+[u S2454 _BD_STAT 1 `uc 1 Val 1 0 `S27 1 . 1 0 `S36 1 . 1 0 `S43 1 . 1 0 ]
+[s S2459 . 4 `S47 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S2464 . 4 `uc 1 filler1 1 0 :8:0 
+`uc 1 filler2 1 1 :8:0 
+`us 1 ADR 2 2 ]
+[u S2468 __BDT 4 `S52 1 . 4 0 `S57 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
 "10 /opt/microchip/xc8/v1.12/sources/memset.c
 [v _memset `(*v  1 e 1 0 ]
 "467 ../USB/usb_device.c
@@ -799,12 +833,20 @@ EVENT_TRANSFER_TERMINATED 5
 [v i1___wmul `(ui  1 e 2 0 ]
 "36 asic.c
 [v _SendAsicData `(v  1 e 0 0 ]
-"59
+"60
 [v _Send32 `(v  1 e 0 0 ]
-"314
+"315
 [v _rotate `(ul  1 e 4 0 ]
-"319
+"320
 [v _AsicPreCalc `(v  1 e 0 0 ]
+"41 fwup.c
+[v _EraseRow `(v  1 e 0 0 ]
+"67
+[v _WriteRow `(v  1 e 0 0 ]
+"124
+[v _VerifyRow `(E5  1 e 1 0 ]
+"173
+[v _UpdateFirmware `(v  1 e 0 0 ]
 "37 i2c.c
 [v _I2CRelay `(v  1 e 0 0 ]
 "47
@@ -1070,7 +1112,7 @@ EVENT_TRANSFER_TERMINATED 5
 [v _USB_CD_Ptr `DCC[1]*DCCuc  1 e 1 0 ]
 "245
 [v _USB_SD_Ptr `DCC[3]*DCCuc  1 e 3 0 ]
-[s S1991 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S1995 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -1080,13 +1122,13 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 GIE 1 0 :1:7 
 ]
 "355 /opt/microchip/xc8/v1.12/include/pic16lf1459.h
-[s S2000 . 1 `uc 1 . 1 0 :2:0 
+[s S2004 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S2005 . 1 `S1991 1 . 1 0 `S2000 1 . 1 0 ]
-[v _INTCONbits `VES2005  1 e 1 @11 ]
+[u S2009 . 1 `S1995 1 . 1 0 `S2004 1 . 1 0 ]
+[v _INTCONbits `VES2009  1 e 1 @11 ]
 [s S250 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ACTIE 1 0 :1:1 
 `uc 1 USBIE 1 0 :1:2 
@@ -1105,7 +1147,7 @@ EVENT_TRANSFER_TERMINATED 5
 [v _TMR1L `VEuc  1 e 1 @22 ]
 "703
 [v _TMR1H `VEuc  1 e 1 @23 ]
-[s S1636 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S1640 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -1113,15 +1155,15 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 TMR1CS 1 0 :2:6 
 ]
 "744
-[s S1643 . 1 `uc 1 . 1 0 :4:0 
+[s S1647 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 `uc 1 TMR1CS0 1 0 :1:6 
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
-[u S1649 . 1 `S1636 1 . 1 0 `S1643 1 . 1 0 ]
-[v _T1CONbits `VES1649  1 e 1 @24 ]
-[s S1667 . 1 `uc 1 T1GSS 1 0 :2:0 
+[u S1653 . 1 `S1640 1 . 1 0 `S1647 1 . 1 0 ]
+[v _T1CONbits `VES1653  1 e 1 @24 ]
+[s S1671 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
 `uc 1 T1GSPM 1 0 :1:4 
@@ -1130,19 +1172,19 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 TMR1GE 1 0 :1:7 
 ]
 "813
-[s S1675 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[s S1679 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 ]
-[u S1678 . 1 `S1667 1 . 1 0 `S1675 1 . 1 0 ]
-[v _T1GCONbits `VES1678  1 e 1 @25 ]
+[u S1682 . 1 `S1671 1 . 1 0 `S1679 1 . 1 0 ]
+[v _T1GCONbits `VES1682  1 e 1 @25 ]
 "881
 [v _PR2 `VEuc  1 e 1 @27 ]
-[s S1787 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S1791 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
 "921
-[s S1791 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S1795 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -1150,8 +1192,8 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[u S1799 . 1 `S1787 1 . 1 0 `S1791 1 . 1 0 ]
-[v _T2CONbits `VES1799  1 e 1 @28 ]
+[u S1803 . 1 `S1791 1 . 1 0 `S1795 1 . 1 0 ]
+[v _T2CONbits `VES1803  1 e 1 @28 ]
 [s S1600 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LATA4 1 0 :1:4 
 `uc 1 LATA5 1 0 :1:5 
@@ -1172,7 +1214,7 @@ EVENT_TRANSFER_TERMINATED 5
 [v _TRISCbits `VES259  1 e 1 @142 ]
 "1168
 [v _PIE2bits `VES259  1 e 1 @146 ]
-[s S1865 . 1 `uc 1 PS 1 0 :3:0 
+[s S1869 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
@@ -1180,27 +1222,27 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1225
-[s S1872 . 1 `uc 1 PS0 1 0 :1:0 
+[s S1876 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S1879 . 1 `S1865 1 . 1 0 `S1872 1 . 1 0 ]
-[v _OPTION_REGbits `VES1879  1 e 1 @149 ]
+[u S1883 . 1 `S1869 1 . 1 0 `S1876 1 . 1 0 ]
+[v _OPTION_REGbits `VES1883  1 e 1 @149 ]
 "1398
 [v _OSCTUNE `VEuc  1 e 1 @152 ]
 "1461
 [v _OSCCON `VEuc  1 e 1 @153 ]
 "1611
 [v _ADRESH `VEuc  1 e 1 @156 ]
-[s S1722 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1726 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "1655
-[s S1726 . 1 `uc 1 . 1 0 :1:0 
+[s S1730 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -1208,37 +1250,37 @@ EVENT_TRANSFER_TERMINATED 5
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S1734 . 1 `uc 1 . 1 0 :1:0 
+[s S1738 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S1737 . 1 `S1722 1 . 1 0 `S1726 1 . 1 0 `S1734 1 . 1 0 ]
-[v _ADCON0bits `VES1737  1 e 1 @157 ]
-[s S1816 . 1 `uc 1 ADPREF 1 0 :2:0 
+[u S1741 . 1 `S1726 1 . 1 0 `S1730 1 . 1 0 `S1738 1 . 1 0 ]
+[v _ADCON0bits `VES1741  1 e 1 @157 ]
+[s S1820 . 1 `uc 1 ADPREF 1 0 :2:0 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS 1 0 :3:4 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "1730
-[s S1821 . 1 `uc 1 ADPREF0 1 0 :1:0 
+[s S1825 . 1 `uc 1 ADPREF0 1 0 :1:0 
 `uc 1 ADPREF1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 ADCS0 1 0 :1:4 
 `uc 1 ADCS1 1 0 :1:5 
 `uc 1 ADCS2 1 0 :1:6 
 ]
-[u S1828 . 1 `S1816 1 . 1 0 `S1821 1 . 1 0 ]
-[v _ADCON1bits `VES1828  1 e 1 @158 ]
-[s S1844 . 1 `uc 1 . 1 0 :4:0 
+[u S1832 . 1 `S1820 1 . 1 0 `S1825 1 . 1 0 ]
+[v _ADCON1bits `VES1832  1 e 1 @158 ]
+[s S1848 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRIGSEL 1 0 :3:4 
 ]
 "1791
-[s S1847 . 1 `uc 1 . 1 0 :4:0 
+[s S1851 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRIGSEL0 1 0 :1:4 
 `uc 1 TRIGSEL1 1 0 :1:5 
 `uc 1 TRIGSEL2 1 0 :1:6 
 ]
-[u S1852 . 1 `S1844 1 . 1 0 `S1847 1 . 1 0 ]
-[v _ADCON2bits `VES1852  1 e 1 @159 ]
+[u S1856 . 1 `S1848 1 . 1 0 `S1851 1 . 1 0 ]
+[v _ADCON2bits `VES1856  1 e 1 @159 ]
 "1827
 [v _LATAbits `VES1604  1 e 1 @268 ]
 "1879
@@ -1249,16 +1291,16 @@ EVENT_TRANSFER_TERMINATED 5
 [v _ANSELA `VEuc  1 e 1 @396 ]
 "2483
 [v _ANSELB `VEuc  1 e 1 @397 ]
-[s S1951 . 1 `uc 1 . 1 0 :4:0 
+[s S1955 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 ANSB4 1 0 :1:4 
 `uc 1 ANSB5 1 0 :1:5 
 ]
 "2499
-[s S1955 . 1 `uc 1 . 1 0 :4:0 
+[s S1959 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 ANSB 1 0 :4:4 
 ]
-[u S1958 . 1 `S1951 1 . 1 0 `S1955 1 . 1 0 ]
-[v _ANSELBbits `VES1958  1 e 1 @397 ]
+[u S1962 . 1 `S1955 1 . 1 0 `S1959 1 . 1 0 ]
+[v _ANSELBbits `VES1962  1 e 1 @397 ]
 "2518
 [v _ANSELC `VEuc  1 e 1 @398 ]
 "2738
@@ -1296,18 +1338,18 @@ EVENT_TRANSFER_TERMINATED 5
 [v _SSPCON2bits `VES259  1 e 1 @534 ]
 "3746
 [v _SSPCON3bits `VES259  1 e 1 @535 ]
-[s S1969 . 1 `uc 1 . 1 0 :4:0 
+[s S1973 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IOCBP4 1 0 :1:4 
 `uc 1 IOCBP5 1 0 :1:5 
 `uc 1 IOCBP6 1 0 :1:6 
 `uc 1 IOCBP7 1 0 :1:7 
 ]
 "3964
-[s S1975 . 1 `uc 1 . 1 0 :4:0 
+[s S1979 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IOCBP 1 0 :4:4 
 ]
-[u S1978 . 1 `S1969 1 . 1 0 `S1975 1 . 1 0 ]
-[v _IOCBPbits `VES1978  1 e 1 @916 ]
+[u S1982 . 1 `S1973 1 . 1 0 `S1979 1 . 1 0 ]
+[v _IOCBPbits `VES1982  1 e 1 @916 ]
 "4040
 [v _IOCBF `VEuc  1 e 1 @918 ]
 "4162
@@ -1405,9 +1447,13 @@ EVENT_TRANSFER_TERMINATED 5
 "33
 [v _last_bit0 `Yuc  1 e 1 0 ]
 [v _last_bit1 `Yuc  1 e 1 0 ]
+"38 fwup.c
+[v _fwbuf `*uc  1 e 2 0 ]
 [s S1387 _id 12 `uc 1 version 1 0 `[7]uc 1 product 7 1 `ul 1 serial 4 8 ]
 "25 klondike.c
 [v _ID `DCCS1387  1 e 12 0 ]
+"26
+[v _FwPwd `DCC[14]uc  1 e 14 0 ]
 "28
 [v _BankRanges `[8]ul  1 e 32 0 ]
 "29
@@ -1449,12 +1495,112 @@ EVENT_TRANSFER_TERMINATED 5
 {
 "143
 } 0
+"174 klondike.c
+[v _WorkTick `(v  1 e 0 0 ]
+{
+"199
+} 0
+"146 main.c
+[v _InitializeSystem `(v  1 s 0 InitializeSystem ]
+{
+"166
+} 0
+"182
+[v _ProcessIO `(v  1 e 0 0 ]
+{
+"205
+} 0
+"44 klondike.c
+[v _ProcessCmd `(v  1 e 0 0 ]
+{
+[v ProcessCmd@cmd `*uc  1 a 1 wreg ]
+"94
+[v ProcessCmd@n `uc  1 a 1 69 ]
+"44
+[v ProcessCmd@cmd `*uc  1 a 1 wreg ]
+"103
+} 0
+"106
+[v _AsicPushWork `(v  1 e 0 0 ]
+{
+"115
+} 0
+"36 asic.c
+[v _SendAsicData `(v  1 e 0 0 ]
+{
+[s S1300 _worktask 45 `uc 1 WorkID 1 0 `[8]ul 1 MidState 32 1 `[3]ul 1 Merkle 12 33 ]
+[v SendAsicData@work `*S1300  1 p 2 12 ]
+[v SendAsicData@split `uc  1 p 1 14 ]
+"57
+} 0
+"60
+[v _Send32 `(v  1 e 0 0 ]
+{
+"310
+} 0
+"320
+[v _AsicPreCalc `(v  1 e 0 0 ]
+{
+"323
+[v AsicPreCalc@m `[8]ul  1 a 32 24 ]
+"321
+[v AsicPreCalc@K `[3]ul  1 a 12 8 ]
+"322
+[v AsicPreCalc@x `ul  1 a 4 60 ]
+[v AsicPreCalc@y `ul  1 a 4 56 ]
+[v AsicPreCalc@z `ul  1 a 4 20 ]
+"324
+[v AsicPreCalc@n `uc  1 a 1 64 ]
+"320
+[v AsicPreCalc@work `*S1300  1 p 2 22 ]
+"321
+[v AsicPreCalc@F3349 `[3]ul  1 s 12 F3349 ]
+"358
+} 0
+"315
+[v _rotate `(ul  1 e 4 0 ]
+{
+[v rotate@x `ul  1 p 4 9 ]
+[v rotate@y `uc  1 p 1 13 ]
+"317
+} 0
+"208 main.c
+[v _SendCmdReply `(v  1 e 0 0 ]
+{
+"212
+[v SendCmdReply@n `uc  1 a 1 23 ]
+"208
+[v SendCmdReply@cmd `*uc  1 p 2 12 ]
+[v SendCmdReply@data `*.muc  1 p 2 14 ]
+[v SendCmdReply@count `uc  1 p 1 16 ]
+"223
+} 0
+"173 fwup.c
+[v _UpdateFirmware `(v  1 e 0 0 ]
+{
+"175
+[v UpdateFirmware@count `us  1 a 2 13 ]
+"174
+[v UpdateFirmware@row `uc  1 a 1 16 ]
+[v UpdateFirmware@n `uc  1 a 1 15 ]
+"216
+} 0
 "669 ../USB/usb_device.c
 [v _USBDeviceTasks `(v  1 e 0 0 ]
 {
 "670
-[v USBDeviceTasks@i `uc  1 a 1 7 ]
+[v USBDeviceTasks@i `uc  1 a 1 8 ]
 "1004
+} 0
+"467
+[v _USBDeviceInit `(v  1 e 0 0 ]
+{
+"481
+[v USBDeviceInit@p `*uc  1 a 2 8 ]
+[v USBDeviceInit@i_718 `uc  1 a 1 10 ]
+"468
+[v USBDeviceInit@i `uc  1 a 1 11 ]
+"552
 } 0
 "2456
 [v _USBWakeFromSuspend `(v  1 s 0 USBWakeFromSuspend ]
@@ -1475,7 +1621,7 @@ EVENT_TRANSFER_TERMINATED 5
 [v _USBCtrlEPService `(v  1 s 0 USBCtrlEPService ]
 {
 "2551
-[v USBCtrlEPService@setup_cnt `uc  1 a 1 25 ]
+[v USBCtrlEPService@setup_cnt `uc  1 a 1 6 ]
 "2580
 } 0
 "2623
@@ -1535,22 +1681,21 @@ EVENT_TRANSFER_TERMINATED 5
 [v _USBStdSetCfgHandler `(v  1 s 0 USBStdSetCfgHandler ]
 {
 "2139
-[v USBStdSetCfgHandler@p `*uc  1 a 2 21 ]
-[v USBStdSetCfgHandler@i_1089 `uc  1 a 1 23 ]
+[v USBStdSetCfgHandler@p `*uc  1 a 2 22 ]
+[v USBStdSetCfgHandler@i_1089 `uc  1 a 1 24 ]
 "2133
-[v USBStdSetCfgHandler@i `uc  1 a 1 24 ]
+[v USBStdSetCfgHandler@i `uc  1 a 1 25 ]
 "2187
 } 0
 "10 /opt/microchip/xc8/v1.12/sources/memset.c
 [v _memset `(*v  1 e 1 0 ]
 {
-[v memset@p1 `*.0v  1 a 1 wreg ]
 "15
-[v memset@p `*.0uc  1 a 1 11 ]
+[v memset@p `*uc  1 a 2 13 ]
 "10
-[v memset@p1 `*.0v  1 a 1 wreg ]
-[v memset@c `i  1 p 2 6 ]
-[v memset@n `ui  1 p 2 8 ]
+[v memset@p1 `*v  1 p 2 6 ]
+[v memset@c `i  1 p 2 8 ]
+[v memset@n `ui  1 p 2 10 ]
 "22
 } 0
 "2207 ../USB/usb_device.c
@@ -1584,96 +1729,9 @@ EVENT_TRANSFER_TERMINATED 5
 [v _USER_USB_CALLBACK_EVENT_HANDLER `(E5  1 e 1 0 ]
 {
 [v USER_USB_CALLBACK_EVENT_HANDLER@event `i  1 p 2 16 ]
-[v USER_USB_CALLBACK_EVENT_HANDLER@pdata `*.0v  1 p 1 18 ]
-[v USER_USB_CALLBACK_EVENT_HANDLER@size `us  1 p 2 19 ]
+[v USER_USB_CALLBACK_EVENT_HANDLER@pdata `*v  1 p 2 18 ]
+[v USER_USB_CALLBACK_EVENT_HANDLER@size `us  1 p 2 20 ]
 "671
-} 0
-"174 klondike.c
-[v _WorkTick `(v  1 e 0 0 ]
-{
-"199
-} 0
-"146 main.c
-[v _InitializeSystem `(v  1 s 0 InitializeSystem ]
-{
-"166
-} 0
-"467 ../USB/usb_device.c
-[v _USBDeviceInit `(v  1 e 0 0 ]
-{
-"481
-[v USBDeviceInit@p `*uc  1 a 2 8 ]
-[v USBDeviceInit@i_718 `uc  1 a 1 10 ]
-"468
-[v USBDeviceInit@i `uc  1 a 1 11 ]
-"552
-} 0
-"182 main.c
-[v _ProcessIO `(v  1 e 0 0 ]
-{
-"205
-} 0
-"44 klondike.c
-[v _ProcessCmd `(v  1 e 0 0 ]
-{
-[v ProcessCmd@cmd `*uc  1 a 1 wreg ]
-[v ProcessCmd@cmd `*uc  1 a 1 wreg ]
-"103
-} 0
-"106
-[v _AsicPushWork `(v  1 e 0 0 ]
-{
-"115
-} 0
-"36 asic.c
-[v _SendAsicData `(v  1 e 0 0 ]
-{
-[s S1300 _worktask 45 `uc 1 WorkID 1 0 `[8]ul 1 MidState 32 1 `[3]ul 1 Merkle 12 33 ]
-[v SendAsicData@work `*S1300  1 p 2 12 ]
-[v SendAsicData@split `uc  1 p 1 14 ]
-"56
-} 0
-"59
-[v _Send32 `(v  1 e 0 0 ]
-{
-"309
-} 0
-"319
-[v _AsicPreCalc `(v  1 e 0 0 ]
-{
-"322
-[v AsicPreCalc@m `[8]ul  1 a 32 24 ]
-"320
-[v AsicPreCalc@K `[3]ul  1 a 12 8 ]
-"321
-[v AsicPreCalc@x `ul  1 a 4 60 ]
-[v AsicPreCalc@y `ul  1 a 4 56 ]
-[v AsicPreCalc@z `ul  1 a 4 20 ]
-"323
-[v AsicPreCalc@n `uc  1 a 1 64 ]
-"319
-[v AsicPreCalc@work `*S1300  1 p 2 22 ]
-"320
-[v AsicPreCalc@F3347 `[3]ul  1 s 12 F3347 ]
-"357
-} 0
-"314
-[v _rotate `(ul  1 e 4 0 ]
-{
-[v rotate@x `ul  1 p 4 9 ]
-[v rotate@y `uc  1 p 1 13 ]
-"316
-} 0
-"208 main.c
-[v _SendCmdReply `(v  1 e 0 0 ]
-{
-"212
-[v SendCmdReply@n `uc  1 a 1 23 ]
-"208
-[v SendCmdReply@cmd `*uc  1 p 2 12 ]
-[v SendCmdReply@data `*.muc  1 p 2 14 ]
-[v SendCmdReply@count `uc  1 p 1 16 ]
-"223
 } 0
 "170
 [v _UserInit `(v  1 e 0 0 ]
@@ -1781,6 +1839,26 @@ EVENT_TRANSFER_TERMINATED 5
 [v USBTransferOnePacket@data `*uc  1 p 1 10 ]
 [v USBTransferOnePacket@len `uc  1 p 1 11 ]
 "1223
+} 0
+"41 fwup.c
+[v _EraseRow `(v  1 e 0 0 ]
+{
+[v EraseRow@addr `us  1 p 2 6 ]
+"64
+} 0
+"67
+[v _WriteRow `(v  1 e 0 0 ]
+{
+[v WriteRow@dest `us  1 p 2 6 ]
+[v WriteRow@off `uc  1 p 1 8 ]
+"121
+} 0
+"124
+[v _VerifyRow `(E5  1 e 1 0 ]
+{
+[v VerifyRow@dest `us  1 p 2 6 ]
+[v VerifyRow@off `uc  1 p 1 8 ]
+"170
 } 0
 "5 /opt/microchip/xc8/v1.12/sources/lwdiv.c
 [v ___lwdiv `(ui  1 e 2 0 ]

@@ -25,6 +25,10 @@
 extern "C" {
 #endif
 
+// until auto detect is working
+#define CHIPS               4
+#define BANKS               1
+
 #define FWPWD               "KlondikeRocks"
 
 #define MASTER_ADDRESS      0x00
@@ -134,6 +138,8 @@ void Send32(void);
 void AsicPreCalc(WORKTASK *work);
 
 void SendCmdReply(char *cmd, BYTE *ReplyBuf, BYTE count);
+
+void UpdateFirmware(void);
 
 #ifdef  __cplusplus
 }
